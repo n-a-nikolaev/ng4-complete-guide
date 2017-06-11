@@ -1,6 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
 
 // Custom Styles
 @import './styles/partials/reset';
+@import './styles/partials/base';
+@import './styles/partials/separators';
+
+@import './app/app.component';
+@import './app/modules/home/home.component';

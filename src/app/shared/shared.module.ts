@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule  } from "@angular/router";
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
 
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    RouterModule
   ],
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    CounterComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    CounterComponent
   ],
 })
 export class SharedModule { }

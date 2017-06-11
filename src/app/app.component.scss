@@ -1,3 +1,48 @@
 body {
-    background: red;
+    font-family: Roboto, sans-serif;
+    overflow-x: hidden;
+    color: #333;
+}
+md-card { margin: 20px 0; }
+
+.app-flex-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        pointer-events: none;
+    }
+}
+
+.app-section {
+    position: relative;
+    
+    .app-section-heading {
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        font-size: 48px;
+        text-align: center;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100px;
+            height: 1px;
+            margin-left: -50px;
+        }
+
+        &.dark:after { background: #333; }
+        &.light:after { background: #fff; }
+        
+        &.dark  { color: #333; }
+        &.light { color: #fff; }
+    }
 }
