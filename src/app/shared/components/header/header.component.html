@@ -2,4 +2,26 @@
     <a [routerLink]="['/']" md-button>Начало</a>
     <a [routerLink]="['/recepies']" md-button>Рецепти</a>
     <a [routerLink]="['/recepies']" md-button>Продукти</a>
+    <span class="fill-remaining-space"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>account_circle</md-icon>
+    </button>
+    <md-menu x-position="after" #menu="mdMenu">
+        <a *ngIf="!user?.uid" [routerLink]="['login']" md-menu-item>
+            <md-icon>lock</md-icon>
+            <span>Login</span>
+        </a>
+        <a *ngIf="!user?.uid" [routerLink]="['register']" md-menu-item>
+            <md-icon>supervisor_account</md-icon>
+            <span>Register</span>
+        </a>
+        <a *ngIf="user?.uid" [routerLink]="['/user', user.uid, 'recepies']" md-menu-item>
+            <md-icon>import_contacts</md-icon>
+            <span>Моите рецепти</span>
+        </a>
+        <a *ngIf="user?.uid" (click)="logout()" md-menu-item>
+            <md-icon>exit_to_app</md-icon>
+            <span>Logout</span>
+        </a>
+    </md-menu>
 </md-toolbar>

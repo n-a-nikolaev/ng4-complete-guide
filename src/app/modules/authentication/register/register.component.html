@@ -1,0 +1,20 @@
+<div class="app-flex-section bg-grey-100">
+  <div class="app-section container">
+    <h2 class="app-section-heading dark">Регистрация</h2>
+    <div class="app-section-content">
+      <form class="app-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <fieldset class="app-form-row">
+          <md-input-container>
+            <input type="text" formControlName="email" mdInput placeholder="E-mail">
+          </md-input-container>
+        </fieldset>
+        <fieldset class="app-form-row">
+          <md-input-container>
+            <input type="password" formControlName="password" mdInput placeholder="Парола">
+          </md-input-container>
+        </fieldset>
+        <button type="submit" md-raised-button color="primary">Регистрирай се</button>
+      </form>
+    </div>
+  </div>
+</div>
