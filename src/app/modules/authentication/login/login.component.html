@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<div class="app-flex-section bg-grey-100">
+  <div class="app-section container">
+    <h2 class="app-section-heading dark">Sign In</h2>
+    <div class="app-section-content">
+      <form class="app-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <fieldset class="app-form-row">
+          <md-input-container>
+            <input type="text" formControlName="email" mdInput placeholder="E-mail">
+          </md-input-container>
+        </fieldset>
+        <fieldset class="app-form-row">
+          <md-input-container>
+            <input type="password" formControlName="password" mdInput placeholder="Password">
+          </md-input-container>
+        </fieldset>
+        <fieldset class="app-form-row mb-20">
+           <md-checkbox formControlName="remember" color="primary">Remember me</md-checkbox>
+        </fieldset>
+        <button type="submit" md-raised-button color="primary">Sign In</button>
+      </form>
+    </div>
+  </div>
+</div>

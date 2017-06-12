@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value as LoginData)
         .then(response => {
-          console.log(response);
+          this.authService.handleAuthSuccess('Registration Successful!');
         })
         .catch(e => {
           this.authService.handleAuthError(e);

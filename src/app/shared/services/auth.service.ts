@@ -30,6 +30,12 @@ export class AuthService {
         return this.afAuth.auth.signOut();
     }
 
+    public handleAuthSuccess(msg: string): void {
+        this.snackbar.open(msg, '', {
+            duration: 3000
+        });
+    }
+
     public handleAuthError(error: any): void {
         this.snackbar.open(error.message, '', {
             duration: 3000
