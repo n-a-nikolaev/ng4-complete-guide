@@ -14,6 +14,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  /**
+   * @name ngOnInit
+   * @description
+   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * https://angular.io/api/core/OnInit
+   * 
+   * @memberof RegisterComponent
+   */
   public ngOnInit(): void {
     this.registerForm = new FormGroup({
       email: new FormControl(''),
@@ -21,6 +29,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  /**
+   * @name onSubmit
+   * @description Event Handler for login for submission
+   * 
+   * @memberof RegisterComponent
+   */
   public onSubmit(): void {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value as LoginData)

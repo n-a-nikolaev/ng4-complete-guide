@@ -15,18 +15,40 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router
+  ) { }
 
+  /**
+   * @name ngOnInit
+   * @description
+   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * 
+   * @memberof HeaderComponent
+   */
   public ngOnInit(): void {
     this.userSubscription = this.authService.user.subscribe(user => {
       this.user = user;
     });
   }
 
+  /**
+   * @name ngOnDestroy
+   * @description
+   * Lifecycle hook that is called when a directive, pipe or service is destroyed.
+   * 
+   * @memberof HeaderComponent
+   */
   public ngOnDestroy(): void {
     this.userSubscription.unsubscribe();
   }
 
+  /**
+   * @name logout
+   * @description Click event handler for logout button.
+   * Perform logout and redirect to home page.
+   * 
+   * @memberof HeaderComponent
+   */
   public logout(): void {
     this.authService.logout()
       .then(response => {
